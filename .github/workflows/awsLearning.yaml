@@ -24,6 +24,18 @@ jobs:
              run: npm ci
           - name: COMPILE CODE
             run: npm run build
-
+            
           - name: RUN TEST
             run: npm test
+          - name: PACKAGE COMPILED CODE
+            run: |
+                 mkdir compileCode
+                 cp -r dist compileCode/
+                 cp package.json package-lock.json compileCode/
+
+          - name: INSTALL PROD DEPENDENCIES
+            working-directory: compileCode
+            run: npm ci --omit=dev
+
+          - name: WE ARE DONE
+            run: echo "we're done"
