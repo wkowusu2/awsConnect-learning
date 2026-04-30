@@ -4,7 +4,8 @@ on:
     push: 
         branches: 
             - main
-
+    
+    workflow_dispatch: 
 jobs:
     AWS-DEPLOYMENT:
         runs-on: ubuntu-latest
@@ -18,7 +19,9 @@ jobs:
             with:
                 node-version: 20
                 cache: npm
-        
+                
+          -  name: INSTALL DEPENDENCIES
+             run: npm ci
           - name: COMPILE CODE
             run: npm run build
 
