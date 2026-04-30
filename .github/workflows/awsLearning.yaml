@@ -1,0 +1,26 @@
+name: MY FIRST WORKFLOW
+
+on: 
+    push: 
+        branches: 
+            - main
+
+jobs:
+    AWS-DEPLOYMENT:
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: COPY CODE FROM GITHUB
+            uses: actions/checkout@v6
+        
+          - name: SETUP NODE
+            uses: actions/setup-node@v4
+            with:
+                node-version: 20
+                cache: npm
+        
+          - name: COMPILE CODE
+            run: npm run build
+
+          - name: RUN TEST
+            run: npm test
