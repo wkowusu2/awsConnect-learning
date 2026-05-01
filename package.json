@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"No test yet\"",
-    "start": "node dist/server.js",
+    "start": "node dist/lambda.js",
     "build": "tsc"
   },
   "keywords": [],
@@ -13,6 +13,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@codegenie/serverless-express": "^4.17.1",
     "express": "^5.2.1"
   },
   "devDependencies": {
