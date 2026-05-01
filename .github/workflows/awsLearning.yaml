@@ -20,8 +20,8 @@ jobs:
                 node-version: 20
                 cache: npm
                 
-          - name: INSTALL DEPENDENCIES
-            run: npm ci
+          -  name: INSTALL DEPENDENCIES
+             run: npm ci
           - name: COMPILE CODE
             run: npm run build
             
@@ -39,4 +39,4 @@ jobs:
 
           - name: WE ARE DONE
             run: |
-                 echo "Error: no test specified" && exit 1
+                echo "Error: no test specified" && exit 1

@@ -16,5 +16,9 @@ function writeHome(req: Request, res: Response): Response<any, Record<string, an
     })
 }
 
-export {getHome, writeHome}
+function sum(a: number, b: number): number {
+  return a + b;
+}
+
+export {getHome, writeHome, sum}
 
